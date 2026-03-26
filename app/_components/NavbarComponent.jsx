@@ -4,8 +4,8 @@ import React from "react";
 
 export default function AppNavbar() {
   return (
-    <div className="w-full flex items-center gap-[10px] justify-end px-6 border-b-1 py-3">
-      <div className="flex gap-[15px] px-6 border-r-1">
+    <div className="w-full flex items-center gap-[10px] justify-end px-6 border-b-1 py-3 sticky top-0 bg-white z-999">
+      <div className="flex gap-[15px] px-6 border-r-1" href="/">
         <Bell width={20}/>
         <ShoppingCart width={20}/>
       </div>

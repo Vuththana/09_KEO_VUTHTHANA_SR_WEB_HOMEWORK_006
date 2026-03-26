@@ -29,14 +29,14 @@ const data = [
 export default function AppSidebar() {
   const pathname = usePathname();
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className={"fixed left-0 z-999"}>
       <SidebarHeader className={"-mx-1"}>
         <div className="flex items-center gap-[10px]">
-          <div className="p-2 bg-blue-300 w-10 rounded-[10px] shadow-md">
+          <Link className="p-2 bg-blue-300 w-10 rounded-[10px] shadow-md" href={"/"}>
             <ShoppingBagIcon className="text-white" />
-          </div>
+          </Link>
           <div className="group-data-[collapsible=icon]:hidden">
-            <p className="text-blue-300 font-[700]">
+            <p className="text-blue-300 font-[900]">
               HRD <span className="text-blue-600">SHOP</span>
             </p>
             <p className="text-[12px] tracking-wide">ADMIN V2.0</p>
