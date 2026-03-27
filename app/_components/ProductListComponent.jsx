@@ -21,7 +21,7 @@ export default function ProductListComponent() {
           item.name.toLowerCase().includes(input.toLowerCase()),
         );
   return (
-    <div>
+    <div className="w-full">
       <div className="flex justify-between">
         <div>
           <p className="text-[24px] font-[700]">List of All Products</p>
@@ -55,11 +55,9 @@ export default function ProductListComponent() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{item.name}</p>
-                  <div className="text-wrap">
-                    <p className="text-gray-400">
-                      {item.description.length > 60
-                        ? item.description.slice(0, 60) + "..."
-                        : item.description}
+                  <div className="">
+                    <p className="text-gray-400 line-clamp-2">
+                      {item.description}
                     </p>
                   </div>
                 </div>

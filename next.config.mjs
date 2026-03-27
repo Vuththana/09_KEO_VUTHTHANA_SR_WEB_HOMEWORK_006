@@ -5,16 +5,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdsassets.apple.com',
-        port: '',
-        pathname: '/**'
+        hostname: '**',
       },
-      {
-        protocol: 'https',
-        hostname: 'i.imgur.com',
-        port: '',
-        pathname: '/**'
-      }
     ]
   }
 };

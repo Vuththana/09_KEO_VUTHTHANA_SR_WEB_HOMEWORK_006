@@ -5,21 +5,21 @@ import { Calendar, Eye } from "lucide-react";
 import Link from "next/link";
 import SearchCustomerComponent from "./SearchCustomerComponent";
 import { fullName } from "../_utils/fullname";
+import { usePathname } from "next/navigation";
 export default function CustomerListComponent() {
   const [data, setData] = useState();
   const [input, setInput] = useState("");
+  const pathname = usePathname();
   useEffect(() => {
     fetch(`https://homework-api.noevchanmakara.site/api/v1/customers`)
     .then(res => res.json())
     .then(data => setData(data))
-  },[])
+  },[pathname])
   const searchByName = input === "" ? data?.payload : data?.payload.filter((item) => fullName(item.firstName, item.lastName).toLowerCase().includes(input.toLowerCase()))
   return (
     <>
       <div className="flex justify-between">
-        <div>
           <p className="text-[24px] font-[700]">List of All Customer</p>
-        </div>
         <SearchCustomerComponent setInput={setInput}/>
       </div>
 

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sidebar";
 import {
   BookOpen,
+  DoorOpen,
   LayoutDashboard,
   Settings,
   ShoppingBagIcon,
@@ -31,17 +32,18 @@ export default function AppSidebar() {
   return (
     <Sidebar collapsible="icon" className={"fixed left-0 z-999"}>
       <SidebarHeader className={"-mx-1"}>
-        <div className="flex items-center gap-[10px]">
-          <Link className="p-2 bg-blue-300 w-10 rounded-[10px] shadow-md" href={"/"}>
+        <Link className="flex gap-[10px] items-center" href={"/"}>
+          <div className="p-2 bg-blue-300 w-10 rounded-[10px] shadow-md">
             <ShoppingBagIcon className="text-white" />
-          </Link>
+          </div>
+
           <div className="group-data-[collapsible=icon]:hidden">
             <p className="text-blue-300 font-[900]">
               HRD <span className="text-blue-600">SHOP</span>
             </p>
             <p className="text-[12px] tracking-wide">ADMIN V2.0</p>
           </div>
-        </div>
+        </Link>
       </SidebarHeader>
       <SidebarContent className={"p-2"}>
         <SidebarMenu className={"flex gap-[10px]"}>
@@ -82,7 +84,12 @@ export default function AppSidebar() {
           })}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <div className="flex gap-[10px] text-red-500 font-[600]">
+          <DoorOpen />
+          <p>Sign out</p>
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }
